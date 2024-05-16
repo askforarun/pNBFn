@@ -1,0 +1,9 @@
+#include "forcefield.itp"
+#include "PNB.itp"
+[ system ]
+; Name
+wetting
+
+[ molecules ]
+; Compound        #mols
+RES               nmol

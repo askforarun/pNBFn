@@ -1,0 +1,30 @@
+; minim.mdp - used as input into grompp to generate em.tpr
+;define=-DORIGINAL_TIP3P
+integrator      = md        ; Algorithm (steep = steepest descent minimization)
+emtol           = 1000.0         ; Stop minimization when the maximum force < 1000.0 kJ/mol/nm
+emstep      = 0.0001      ; Energy step size
+nsteps          = 10000         ; Maximum number of (minimization) steps to perform
+
+; Output control
+nstxout                 = 0       ; save coordinates every 1.0 ps
+nstvout                 = 0       ; save velocities every 1.0 ps
+nstenergy               = 0       ; save energies every 1.0 ps
+nstlog                  = 100       ; update log file every 1.0 ps
+
+; Parameters describing how to find the neighbors of each atom and how to calculate the interactions
+cutoff-scheme           = Verlet
+nstlist                 = 20
+rlist                   = 1.2
+vdwtype                 = Cut-off
+vdw-modifier            = none
+rvdw_switch             = 1
+rvdw                    = 1.2
+coulombtype             = pme
+rcoulomb                = 1.2
+DispCorr                = EnerPres
+pbc                     = xyz           ; Periodic Boundary Conditions (yes/no)
+;periodic_molecules      = yes
+ewald-geometry  = 3d
+pme_order       = 4             ; [fourierspacing * pme_order = accuracy]
+fourierspacing  = 0.4          ; larger fourierspacing decreases load imbalance
+
