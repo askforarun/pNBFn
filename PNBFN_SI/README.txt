@@ -3,5 +3,5 @@ Execute the following script from the folder PNBFN_SI to build polymer chains in
 ./scripts/create_polymersystems.sh
 
 Description:
-The recipe for building the polymer chain is in PNBFN.py. 
+The recipe for building the polymer chain, PNBFN.py is in /PNBFN_SI/mol2_ff_files 
 
